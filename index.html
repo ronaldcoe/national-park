@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>National Park</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="https://js.arcgis.com/4.23/esri/themes/light/main.css">
+    <script src="https://js.arcgis.com/4.23/"></script>
+    
+   
+</head>
+
+<body>
+    <div id="logo">
+        <img src="src/logo.png">
+    </div>
+    <h1>Welcome to the National Park Finder App</h1>
+    <div id="locations">
+        <button class="accordion">Alaska</button>
+        <div class="panel"> 
+            <table>
+                <tr><td><button onclick="createMap(7, -151.0070, 63.0692 ); getLocation('denali');">Denali</button></td></tr>
+                <tr><td><button onclick="createMap(8, -153.1861, 67.8819 ); getLocation('gaar');">Gates of the Artic</button></td></tr>
+                <tr><td><button onclick="createMap(8, -136.9002, 58.6658 ); getLocation('glba');">Glacier Bay</button></td></tr>
+                <tr><td><button onclick="createMap(8, -155.0631, 58.6658 ); getLocation('katm');">Katmai</button></td></tr>
+                <tr><td><button onclick="createMap(8, -150.1879, 59.8487 ); getLocation('kefj');">Kenai Fjords</button></td></tr>
+                <tr><td><button onclick="createMap(8, -159.2137, 67.3575 ); getLocation('kova');">Kobuk Valley</button></td></tr>
+                <tr><td><button onclick="createMap(8, -153.5301, 60.5941 ); getLocation('lacl');">Lake Clark</button></td></tr>
+                <tr><td><button onclick="createMap(6, -142.9857, 61.7104 ); getLocation('wrst');">Wrangell-St. Elias</button></td></tr>
+            </table>
+        </div>
+        <button class="accordion">American Samoa</button>
+        <div class="panel"> 
+            <table>
+                <tr><td><button onclick="createMap(6, -170.6950175, -14.3064071 ); getLocation('npsa');">American Samoa</button></td></tr>
+            </table>
+        </div>
+        <button class="accordion">Arizona</button>
+        <div class="panel"> 
+            <table>
+                <tr><td><button onclick="createMap(8, -112.1129, 36.1069 ); getLocation('grca');">Grand Canyon</button></td></tr>
+                <tr><td><button onclick="createMap(8, -109.7889, 35.0037 ); getLocation('pefo');">Petrified Forest</button></td></tr>
+                <tr><td><button onclick="createMap(8, -111.1666, 32.2967 ); getLocation('sagu');">Saguaro</button></td></tr>
+                <tr><td><button onclick="createMap(8, -112.8320, 32.0280 ); getLocation('orpi');">Organ Pipe Cactus</button></td></tr>
+            </table>
+        </div>
+        <button class="accordion">Arkansas</button>
+        <div class="panel"> 
+            <table>
+                <tr><td><button onclick="createMap(8, -93.0689, 34.5269 ); getLocation('hosp');">Hot Springs</button></td></tr>
+            </table>
+        </div>
+
+        <button class="accordion">California</button>
+        <div class="panel"> 
+            <table>
+                <tr><td><button onclick="createMap(8, -119.772949, 33.998028 ); getLocation('chis');">Channel Islands</button></td></tr>
+                <tr><td><button onclick="createMap(8, -117.0794, 36.5054 ); getLocation('deva');">Death Valley</button></td></tr>
+                <tr><td><button onclick="createMap(8, -115.9010, 33.8734 ); getLocation('jotr');">Joshua Tree</button></td></tr>
+                <tr><td><button onclick="createMap(8, -118.5551, 36.8879 ); getLocation('seki');">Sequoia & Kings Canyon</button></td></tr>
+                <tr><td><button onclick="createMap(8, -121.4207, 40.4977 ); getLocation('lavo');">Lassen Volcanic</button></td></tr>
+                <tr><td><button onclick="createMap(8, -124.0046, 41.2132 ); getLocation('redw');">Redwood</button></td></tr>
+                <tr><td><button onclick="createMap(8, -119.5383, 37.8651 ); getLocation('yose');">Yosemite</button></td></tr>
+            </table>
+        </div>
+        <button class="accordion">Colorado</button>
+        <div class="panel"> 
+            <table>
+                <tr><td><button onclick="createMap(8, -107.7416, 38.5754 ); getLocation('blca');">Black Canyon of the Gunnison</button></td></tr>
+                <tr><td><button onclick="createMap(8, -105.5931, 37.7935 ); getLocation('grsa');">Great Sand Dunes</button></td></tr>
+                <tr><td><button onclick="createMap(8, -108.4618, 37.2309 ); getLocation('meve');">Mesa Verde</button></td></tr>
+                <tr><td><button onclick="createMap(8, -105.6836, 40.3428 ); getLocation('romo');">Rocky Mountain</button></td></tr>
+            </table>
+        </div>
+        <button class="accordion">Florida</button>
+        <div class="panel"> 
+            <table>
+                <tr><td><button onclick="createMap(8, -80.2083, 25.4824 ); getLocation('bisc');">Biscayne</button></td></tr>
+                <tr><td><button onclick="createMap(8, -82.8554, 24.6652 ); getLocation('drto');">Dry Tortugas</button></td></tr>
+                <tr><td><button onclick="createMap(8, -80.5550, 25.7459 ); getLocation('ever');">Everglades</button></td></tr>
+            </table>
+        </div>
+        <button class="accordion">Hawaii</button>
+        <div class="panel"> 
+            <table>
+                <tr><td><button onclick="createMap(8, -156.1552, 20.7204 ); getLocation('hale');">Haleakala</button></td></tr>
+                <tr><td><button onclick="createMap(8, -155.2885, 19.4194 ); getLocation('havo');">Hawaiʻi Volcanoes<button></td></tr>
+            </table>
+        </div>
+        <button class="accordion">Idaho</button>
+        <div class="panel"> 
+            <table>
+                <tr><td><button onclick="createMap(8, -110.5885, 44.4280 ); getLocation('yell');">Yellowstone</button></td></tr>
+            </table>
+        </div>
+        <button class="accordion">Kentucky</button>
+        <div class="panel"> 
+            <table>
+                <tr><td><button onclick="createMap(8, -86.1000, 37.1862 ); getLocation('maca');">Mammoth Cave</button></td></tr>
+            </table>
+        </div>
+        <button class="accordion">Michigan</button>
+        <div class="panel"> 
+            <table>
+                <tr><td><button onclick="createMap(8, -88.9313, 47.9763 ); getLocation('isro');">Isle Royale</button></td></tr>
+            </table>
+        </div>
+        <button class="accordion">Minnesota</button>
+        <div class="panel"> 
+            <table>
+                <tr><td><button onclick="createMap(8, -92.8268, 48.4733 ); getLocation('voya');">Voyageurs</button></td></tr>
+            </table>
+        </div>
+        <button class="accordion">Montana</button>
+        <div class="panel"> 
+            <table>
+                <tr><td><button onclick="createMap(8, -113.7870, 48.7596 ); getLocation('glac');">Glacier</button></td></tr>
+            </table>
+        </div>
+        <button class="accordion">Nevada</button>
+        <div class="panel"> 
+            <table>
+                <tr><td><button onclick="createMap(8, -114.2634, 38.9300 ); getLocation('grba');">Great Basin</button></td></tr>
+            </table>
+        </div>
+        <button class="accordion">New Mexico</button>
+        <div class="panel"> 
+            <table>
+                <tr><td><button onclick="createMap(8, -104.5539, 32.1291 ); getLocation('cave');">Carlsbad Caverns</button></td></tr>
+            </table>
+        </div>
+        <button class="accordion">North Carolina</button>
+        <div class="panel"> 
+            <table>
+                <tr><td><button onclick="createMap(8, -83.5532, 35.6131 ); getLocation('grsm');">Great Smoky Mountains</button></td></tr>
+            </table>
+        </div>
+        <button class="accordion">North Dakota</button>
+        <div class="panel"> 
+            <table>
+                <tr><td><button onclick="createMap(8, -103.5387, 46.9790 ); getLocation('thro');">Theodore Roosevelt</button></td></tr>
+            </table>
+        </div>
+        <button class="accordion">Ohio</button>
+        <div class="panel"> 
+            <table>
+                <tr><td><button onclick="createMap(8, -81.5678, 41.2808 ); getLocation('cuva');">Cuyahoga Valley</button></td></tr>
+            </table>
+        </div>
+        <button class="accordion">Oregon</button>
+        <div class="panel"> 
+            <table>
+                <tr><td><button onclick="createMap(8, -122.1337, 42.8972 ); getLocation('crla');">Crater Lake</button></td></tr>
+            </table>
+        </div>
+        <button class="accordion">South Carolina</button>
+        <div class="panel"> 
+            <table>
+                <tr><td><button onclick="createMap(8, -80.7490, 33.7919 ); getLocation('cong');">Congaree</button></td></tr>
+            </table>
+        </div>
+        <button class="accordion">South Dakota</button>
+        <div class="panel"> 
+            <table>
+                <tr><td><button onclick="createMap(8, -102.3397, 43.8554 ); getLocation('badl');">Badlands</button></td></tr>
+                <tr><td><button onclick="createMap(8, -103.4416, 43.5724 ); getLocation('wica');">Wind Cave</button></td></tr>
+            </table>
+        </div>
+        <button class="accordion">Tennessee</button>
+        <div class="panel"> 
+            <table>
+                <tr><td><button onclick="createMap(8, -83.5532, 35.6131 ); getLocation('grsm');">Great Smoky Mountains</button></td></tr>
+            </table>
+        </div>
+        <button class="accordion">Texas</button>
+        <div class="panel"> 
+            <table>
+                <tr><td><button onclick="createMap(8, -103.2502, 29.2498 ); getLocation('bibe');">Big Bend</button></td></tr>
+                <tr><td><button onclick="createMap(8, -104.8848, 31.9211 ); getLocation('gumo');">Guadalupe Mountains</button></td></tr>
+            </table>
+        </div>
+        <button class="accordion">Virgin Islands</button>
+        <div class="panel"> 
+            <table>
+                <tr><td><button onclick="createMap(8, -64.7501, 18.3435 ); getLocation('viis');">Virgin Islands</button></td></tr>
+            </table>
+        </div>
+        <button class="accordion">Utah</button>
+        <div class="panel"> 
+            <table>
+                <tr><td><button onclick="createMap(8, -109.5925, 38.7331 ); getLocation('arch');">Arches</button></td></tr>
+                <tr><td><button onclick="createMap(8, -112.1871, 37.5930 ); getLocation('brca');">Bryce Canyon</button></td></tr>
+                <tr><td><button onclick="createMap(8, -109.9025, 38.2136 ); getLocation('cany');">Canyonlands</button></td></tr>
+                <tr><td><button onclick="createMap(8, -111.1355, 38.0877 ); getLocation('care');">Capitol Reef</button></td></tr>
+                <tr><td><button onclick="createMap(8, -113.0263, 37.2982 ); getLocation('zion');">Zion</button></td></tr>
+            </table>
+        </div>
+        <button class="accordion">Virginia</button>
+        <div class="panel"> 
+            <table>
+                <tr><td><button onclick="createMap(8, -78.4535, 38.4755 ); getLocation('shen');">Shenandoah</button></td></tr>
+            </table>
+        </div>
+        <button class="accordion">Washington</button>
+        <div class="panel"> 
+            <table>
+                <tr><td><button onclick="createMap(8, -121.7269, 46.8800 ); getLocation('mora');">Mount Rainier</button></td></tr>
+                <tr><td><button onclick="createMap(8, -121.2985, 48.7718 ); getLocation('noca');">North Cascades</button></td></tr>
+                <tr><td><button onclick="createMap(8, -123.6044, 47.8021 ); getLocation('olym');">Olympic</button></td></tr>
+            </table>
+        </div>
+        <button class="accordion">Wyoming</button>
+        <div class="panel"> 
+            <table>
+                <tr><td><button onclick="createMap(8, -110.6818, 43.7904 ); getLocation('grte');">Grand Teton</button></td></tr>
+                <tr><td><button onclick="createMap(8, -110.5885, 44.4280 ); getLocation('yell');">Yellowstone</button></td></tr>    
+            </table>
+        </div>
+    </div>
+    <div id="viewDiv"></div>
+    <div id="parkInformation">
+        <h2 id="name"></h2>
+        <img id="parkImage">
+        <p id="desc"></p>
+        <h4>Hours</h4>
+        <p id="hoursDesc"></p>
+        <p id="mo"></p>
+        <p id="tu"></p>
+        <p id="we"></p>
+        <p id="th"></p>
+        <p id="fr"></p>
+        <p id="sa"></p>
+        <p id="su"></p>
+        <h4>Contact Information</h4>
+        <p id="parkPhone"></p>
+        <p id="emailPark"></p>
+    </div>
+
+    <script src="scripts/script1.js"></script>
+    <footer>
+        <p>Ronald Coello © 2022</p>
+    </footer>
+
+</body>
+
+</html>
