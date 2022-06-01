@@ -113,9 +113,8 @@ h1 {
 }
 #parkInformation {
     width:100%;
-    overflow-y: scroll;
-    height: 28vh;
     margin-top: 20px;
+    height: 100%
 }
 #parkInformation img {
     width: 100%;
