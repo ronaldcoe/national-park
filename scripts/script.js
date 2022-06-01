@@ -20,7 +20,7 @@ function displayInformation(data) {
 }
 
 function getLocation (loc) {
-  let url = `https://developer.nps.gov/api/v1/parks?parkCode=${loc}&api_key=mlLlL5wSXZuSGJVqwtUvDJ0e7cwqmdP55KdHcEQz`;
+  let url = `https://developer.nps.gov/api/v1/parks?parkCode=${loc}&api_key=K9IEC62xjIE9PxvPHkCkrI6XcJXAix2PRDXBe2lY`;
 
   fetch(url).then(res => res.json()).then(data => displayInformation(data) )
   // fetch(url).then(res => res.json()).then(data => console.log(data));
@@ -123,7 +123,7 @@ require([
 
   for(j = 0; j<locations.length; j++) {
       
-      let url1 = `https://developer.nps.gov/api/v1/parks?parkCode=${locations[j]}&api_key=mlLlL5wSXZuSGJVqwtUvDJ0e7cwqmdP55KdHcEQz`;
+      let url1 = `https://developer.nps.gov/api/v1/parks?parkCode=${locations[j]}&api_key=K9IEC62xjIE9PxvPHkCkrI6XcJXAix2PRDXBe2lY`;
 
       fetch(url1).then(res => res.json()).then(data1 => createPoints(data1) )
       
