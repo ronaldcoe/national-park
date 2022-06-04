@@ -85,7 +85,9 @@ footer {
     font-size: 12px;
 }
 
-
+footer p {
+    text-align: left;
+}
 
 @media only screen and (max-width: 1000px) {
 #logo img {
@@ -126,4 +128,8 @@ h1 {
 footer {
     position: relative;
     padding-top: 20px;
+    
+}
+footer p {
+    text-align: center;
 }
